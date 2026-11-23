@@ -1,0 +1,577 @@
+/* =====================================================
+   BRIGHT JUNIOR SCHOOL
+   RESPONSIVE DESIGN
+===================================================== */
+
+
+/* ==========================================
+   LARGE TABLETS & SMALL LAPTOPS
+========================================== */
+
+@media(max-width:1100px){
+
+
+.container{
+
+    width:92%;
+
+}
+
+
+
+/* Navigation */
+
+
+.nav-menu{
+
+    gap:15px;
+
+}
+
+
+
+.navbar .btn{
+
+    display:none;
+
+}
+
+
+
+/* Hero */
+
+
+.hero-content h1{
+
+    font-size:48px;
+
+}
+
+
+
+.hero-content{
+
+    max-width:550px;
+
+}
+
+
+
+
+
+/* Grids */
+
+
+.why-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.program-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.facility-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.statistics .container{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.footer-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media(max-width:850px){
+
+
+/* TOP BAR */
+
+
+.top-bar .container{
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+
+
+/* NAVIGATION */
+
+
+.navbar{
+
+    height:80px;
+
+}
+
+
+
+.nav-menu{
+
+
+    position:absolute;
+
+
+    top:80px;
+
+
+    left:-100%;
+
+
+    width:100%;
+
+
+    background:white;
+
+
+    flex-direction:column;
+
+
+    padding:30px;
+
+
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.nav-menu.active{
+
+    left:0;
+
+}
+
+
+
+.menu-btn{
+
+    display:block;
+
+}
+
+
+
+.logo img{
+
+    width:55px;
+
+    height:55px;
+
+}
+
+
+
+.logo h2{
+
+    font-size:16px;
+
+}
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+    height:75vh;
+
+}
+
+
+
+.hero-content{
+
+    left:5%;
+
+    right:5%;
+
+}
+
+
+
+.hero-content h1{
+
+    font-size:40px;
+
+}
+
+
+
+.hero-content p{
+
+    font-size:15px;
+
+}
+
+
+
+.hero-buttons{
+
+    flex-wrap:wrap;
+
+}
+
+
+
+
+/* SECTIONS */
+
+
+.section-header h2{
+
+    font-size:30px;
+
+}
+
+
+
+
+
+.welcome-grid,
+.program-grid,
+.facility-grid,
+.gallery-grid,
+.news-grid,
+.testimonial-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+
+
+.headteacher-grid{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+.headteacher-image img{
+
+    height:400px;
+
+}
+
+
+
+
+
+.contact-box{
+
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+/* ==========================================
+        MOBILE PHONES
+========================================== */
+
+@media(max-width:600px){
+
+
+
+body{
+
+    font-size:14px;
+
+}
+
+
+
+/* TOP BAR */
+
+
+.top-left{
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+    height:70vh;
+
+}
+
+
+
+.hero-content span{
+
+    font-size:13px;
+
+}
+
+
+
+.hero-content h1{
+
+    font-size:32px;
+
+    margin:15px 0;
+
+}
+
+
+
+.hero-content p{
+
+    line-height:1.6;
+
+}
+
+
+
+.slider-controls{
+
+
+    bottom:20px;
+
+    right:20px;
+
+
+}
+
+
+
+.slider-controls button{
+
+    width:40px;
+
+    height:40px;
+
+}
+
+
+
+
+/* BUTTON */
+
+
+.btn{
+
+    padding:12px 24px;
+
+}
+
+
+
+/* SECTIONS */
+
+
+.welcome,
+.why-us,
+.programs,
+.facilities,
+.gallery-preview,
+.news-section,
+.testimonials,
+.headteacher{
+
+    padding:60px 0;
+
+}
+
+
+
+
+.section-header{
+
+    margin-bottom:35px;
+
+}
+
+
+
+.section-header h2{
+
+    font-size:26px;
+
+}
+
+
+
+
+
+/* CARDS */
+
+
+.welcome-card,
+.why-card,
+.program-card,
+.news-card,
+.testimonial-card{
+
+    padding:25px;
+
+}
+
+
+
+
+
+/* STATISTICS */
+
+
+.statistics{
+
+    padding:60px 0;
+
+}
+
+
+
+.statistics .container{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.counter-box h2{
+
+    font-size:42px;
+
+}
+
+
+
+
+
+/* TEACHER */
+
+
+.headteacher-content h2{
+
+    font-size:28px;
+
+}
+
+
+
+.headteacher-image img{
+
+    height:350px;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+footer{
+
+    text-align:center;
+
+}
+
+
+
+
+.footer-social a{
+
+    margin:5px;
+
+}
+
+
+
+
+/* FLOAT BUTTONS */
+
+
+.whatsapp{
+
+    width:55px;
+
+    height:55px;
+
+    font-size:26px;
+
+}
+
+
+
+#backTop{
+
+    bottom:90px;
+
+}
+
+
+}

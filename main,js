@@ -1,0 +1,515 @@
+/* =====================================================
+   BRIGHT JUNIOR SCHOOL WEBSITE
+   MAIN JAVASCRIPT
+===================================================== */
+
+
+
+// ==========================================
+// PRELOADER
+// ==========================================
+
+
+window.addEventListener("load",()=>{
+
+
+    const preloader=document.getElementById("preloader");
+
+
+    if(preloader){
+
+        setTimeout(()=>{
+
+            preloader.style.opacity="0";
+
+            preloader.style.visibility="hidden";
+
+
+        },800);
+
+    }
+
+
+});
+
+
+
+
+
+
+// ==========================================
+// MOBILE MENU
+// ==========================================
+
+
+const menuBtn=document.querySelector(".menu-btn");
+
+const navMenu=document.querySelector(".nav-menu");
+
+
+if(menuBtn){
+
+
+menuBtn.addEventListener("click",()=>{
+
+
+    navMenu.classList.toggle("active");
+
+
+    menuBtn.innerHTML = 
+    navMenu.classList.contains("active")
+    ?
+    '<i class="bi bi-x-lg"></i>'
+    :
+    '<i class="bi bi-list"></i>';
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+// Close mobile menu when clicking a link
+
+
+document.querySelectorAll(".nav-menu a").forEach(link=>{
+
+
+    link.addEventListener("click",()=>{
+
+
+        if(navMenu){
+
+            navMenu.classList.remove("active");
+
+
+        }
+
+
+    });
+
+
+});
+
+
+
+
+
+
+// ==========================================
+// HERO SLIDER
+// ==========================================
+
+
+
+const slides=document.querySelectorAll(".slide");
+
+const nextBtn=document.getElementById("next");
+
+const prevBtn=document.getElementById("prev");
+
+
+let currentSlide=0;
+
+
+
+function showSlide(index){
+
+
+    slides.forEach(slide=>{
+
+
+        slide.classList.remove("active");
+
+
+    });
+
+
+    slides[index].classList.add("active");
+
+
+}
+
+
+
+
+
+function nextSlide(){
+
+
+    currentSlide++;
+
+
+    if(currentSlide>=slides.length){
+
+        currentSlide=0;
+
+    }
+
+
+    showSlide(currentSlide);
+
+
+}
+
+
+
+
+function previousSlide(){
+
+
+    currentSlide--;
+
+
+    if(currentSlide<0){
+
+        currentSlide=slides.length-1;
+
+    }
+
+
+    showSlide(currentSlide);
+
+
+}
+
+
+
+
+if(nextBtn){
+
+
+nextBtn.addEventListener("click",nextSlide);
+
+
+}
+
+
+
+if(prevBtn){
+
+
+prevBtn.addEventListener("click",previousSlide);
+
+
+}
+
+
+
+// automatic slider
+
+
+if(slides.length>0){
+
+
+setInterval(()=>{
+
+
+    nextSlide();
+
+
+},5000);
+
+
+
+}
+
+
+
+
+
+
+
+// ==========================================
+// STATISTICS COUNTER
+// ==========================================
+
+
+const counters=document.querySelectorAll(".counter");
+
+
+let counterStarted=false;
+
+
+
+function startCounters(){
+
+
+    if(counterStarted) return;
+
+
+
+    counters.forEach(counter=>{
+
+
+        const target=+counter.dataset.target;
+
+
+        let count=0;
+
+
+
+        const update=()=>{
+
+
+            const increment=Math.ceil(target/100);
+
+
+
+            if(count<target){
+
+
+                count+=increment;
+
+
+                counter.innerText=count;
+
+
+                setTimeout(update,20);
+
+
+            }else{
+
+
+                counter.innerText=target;
+
+
+            }
+
+
+
+        };
+
+
+        update();
+
+
+
+    });
+
+
+
+    counterStarted=true;
+
+
+
+}
+
+
+
+
+window.addEventListener("scroll",()=>{
+
+
+    const statistics=document.querySelector(".statistics");
+
+
+    if(statistics){
+
+
+        const position=statistics.getBoundingClientRect().top;
+
+
+        const screenHeight=window.innerHeight;
+
+
+
+        if(position < screenHeight-100){
+
+
+            startCounters();
+
+
+        }
+
+
+    }
+
+
+
+});
+
+
+
+
+
+
+
+
+// ==========================================
+// BACK TO TOP BUTTON
+// ==========================================
+
+
+const backTop=document.getElementById("backTop");
+
+
+
+window.addEventListener("scroll",()=>{
+
+
+    if(backTop){
+
+
+        if(window.scrollY>400){
+
+
+            backTop.style.display="flex";
+
+
+        }else{
+
+
+            backTop.style.display="none";
+
+
+        }
+
+
+    }
+
+
+
+});
+
+
+
+
+if(backTop){
+
+
+backTop.addEventListener("click",()=>{
+
+
+    window.scrollTo({
+
+
+        top:0,
+
+        behavior:"smooth"
+
+
+    });
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+// ==========================================
+// STICKY HEADER EFFECT
+// ==========================================
+
+
+
+const header=document.getElementById("header");
+
+
+window.addEventListener("scroll",()=>{
+
+
+    if(header){
+
+
+        if(window.scrollY>100){
+
+
+            header.classList.add("sticky");
+
+
+        }else{
+
+
+            header.classList.remove("sticky");
+
+
+        }
+
+
+    }
+
+
+
+});
+
+
+
+
+
+
+
+// ==========================================
+// SIMPLE SCROLL REVEAL ANIMATION
+// ==========================================
+
+
+
+const revealElements=document.querySelectorAll(
+".welcome-card,.why-card,.program-card,.facility,.news-card,.testimonial-card"
+);
+
+
+
+function reveal(){
+
+
+revealElements.forEach(element=>{
+
+
+    const position=
+    element.getBoundingClientRect().top;
+
+
+
+    if(position < window.innerHeight-80){
+
+
+        element.style.opacity="1";
+
+        element.style.transform="translateY(0)";
+
+
+    }
+
+
+
+});
+
+
+
+}
+
+
+
+
+reveal();
+
+
+window.addEventListener("scroll",reveal);
+const faqQuestions =
+document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+btn.parentElement.classList.toggle("active");
+
+});
+
+});
+
